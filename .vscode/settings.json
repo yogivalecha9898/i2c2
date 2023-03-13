@@ -1,0 +1,74 @@
+{
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "editor.snippetSuggestions": "top",
+    "editor.suggestSelection": "first",
+    "editor.cursorSmoothCaretAnimation": false,
+    "editor.smoothScrolling": true,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Monaco",
+    "editor.fontWeight": "bold",
+    "editor.formatOnSave": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "editor.cursorStyle": "line",
+    "terminal.integrated.fontSize": 14,
+    "workbench.sideBar.location": "left",
+    "breadcrumbs.enabled": true,
+    // "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontFamily": "Monaco",
+    "terminal.integrated.fontWeight": "bold",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.renderWhitespace": "none",
+    "workbench.iconTheme": "material-icon-theme",
+    "git.ignoreMissingGitWarning": true,
+    "yaml.schemas": {
+        "file:///Users/rohangore/.vscode/extensions/atlassian.atlascode-3.0.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "redhat.telemetry.enabled": true,
+    "atlascode.jira.jqlList": [
+        {
+            "id": "2b4e21c3-3b3e-4160-a10c-9fcd74911164",
+            "enabled": true,
+            "name": "My cashfree Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "45673b2f-2796-40f5-8712-ba73091e4c92",
+            "monitor": true
+        }
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "[python]": {
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    }
+  }

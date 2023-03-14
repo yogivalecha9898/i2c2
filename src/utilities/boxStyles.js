@@ -1,9 +1,9 @@
 export const boxStyle = {
-  width: "100px",
-  height: "100px",
+  width: "50px",
+  height: "50px",
   position: "relative",
   overflow: "hidden",
-  borderRadius: "50%",
+  borderRadius: "20px",
 };
 
 export const modalBoxstyle = {

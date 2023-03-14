@@ -10,6 +10,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -36,43 +37,26 @@ const IterableEyes = ({ target, setClothesValue, setClothesColorValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        onClick={() => setIdx((idx + 1) % arr.length)}
-        sx={{ ...boxStyle, margin: "20px" }}
-        className="border"
-      >
-        <Piece
-          style={{
-            position: "absolute",
-          }}
-          pieceType="clothe"
-          pieceSize="100"
-          clotheType={arr[idx]}
-          clotheColor={clothesColor}
-        />
-      </Box>
-      {/* <FormControl sx={{ minWidth: "100px", margin: "20px 0" }}>
-        <InputLabel id="demo-simple-select-label">Clothes</InputLabel>
-        <Select label="CLOTHES" onChange={(e) => setClothes(e.target.value)}>
-          {arr.map((options) => {
-            return (
-              <MenuItem
-                value={options}
-                className="flex-column flex-center flex"
-                key={options}
-              >
-                <Piece
-                  pieceType="clothe"
-                  pieceSize="100"
-                  clotheType={options}
-                  clotheColor={clothesColor}
-                />
-              </MenuItem>
-            );
-          })}
-        </Select>
-      </FormControl> */}
-      <FormControl sx={{ minWidth: "100px" }}>
+      <Tooltip title={arr[idx]}>
+        <Box
+          onClick={() => setIdx((idx + 1) % arr.length)}
+          sx={{ ...boxStyle, marginBottom: "20px" }}
+          className="border"
+        >
+          <Piece
+            style={{
+              position: "absolute",
+              top: "-44%",
+              left: "-22%",
+            }}
+            pieceType="clothe"
+            pieceSize="70"
+            clotheType={arr[idx]}
+            clotheColor={clothesColor}
+          />
+        </Box>
+      </Tooltip>
+      <FormControl size="small">
         <InputLabel id="demo-simple-select-label">Clothe Color</InputLabel>
         <Select
           label="Clothe Color"

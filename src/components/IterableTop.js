@@ -10,6 +10,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -36,22 +37,24 @@ const IterableTop = ({ target, setTopValue, setHairColorValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        sx={{ ...boxStyle, marginBottom: "20px" }}
-        className="border"
-        onClick={() => setIdx((idx + 1) % arr.length)}
-      >
-        <Piece
-          style={{
-            position: "absolute",
-          }}
-          pieceType="top"
-          pieceSize="100"
-          topType={arr[idx]}
-          hairColor={hairColor}
-        />
-      </Box>
-      <FormControl>
+      <Tooltip title={arr[idx]}>
+        <Box
+          sx={{ ...boxStyle, marginBottom: "20px" }}
+          className="border"
+          onClick={() => setIdx((idx + 1) % arr.length)}
+        >
+          <Piece
+            style={{
+              position: "absolute",
+            }}
+            pieceType="top"
+            pieceSize="50"
+            topType={arr[idx]}
+            hairColor={hairColor}
+          />
+        </Box>
+      </Tooltip>
+      <FormControl size="small">
         <InputLabel id="demo-simple-select-label">Hair Color</InputLabel>
         <Select
           label="Hair Color"

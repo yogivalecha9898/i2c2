@@ -10,6 +10,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -33,18 +34,24 @@ const IterableFacialHair = ({ target, setFacialHairValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        sx={boxStyle}
-        onClick={() => setIdx((idx + 1) % arr.length)}
-        className="border"
-      >
-        <Piece
-          style={{ position: "absolute" }}
-          pieceType="facialHair"
-          pieceSize="100"
-          facialHairType={arr[idx]}
-        />
-      </Box>
+      <Tooltip title={arr[idx]}>
+        <Box
+          sx={boxStyle}
+          onClick={() => setIdx((idx + 1) % arr.length)}
+          className="border"
+        >
+          <Piece
+            style={{
+              position: "absolute",
+              top: "-50%",
+              left: "-52%",
+            }}
+            pieceType="facialHair"
+            pieceSize="100"
+            facialHairType={arr[idx]}
+          />
+        </Box>
+      </Tooltip>
       {/* <FormControl sx={{ minWidth: "100px", margin: "20px 0" }}>
         <InputLabel id="demo-simple-select-label">Facial Hair</InputLabel>
         <Select

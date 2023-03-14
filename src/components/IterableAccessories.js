@@ -10,6 +10,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -34,22 +35,24 @@ const IterableAccessories = ({ target, setAccValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        onClick={() => setIdx((prevValue) => (prevValue + 1) % arr.length)}
-        sx={boxStyle}
-        className="border"
-      >
-        <Piece
-          style={{
-            position: "absolute",
-            top: "-27%",
-            left: "-51%",
-          }}
-          pieceType="accessories"
-          pieceSize="200"
-          accessoriesType={arr[idx]}
-        />
-      </Box>
+      <Tooltip title={arr[idx]}>
+        <Box
+          onClick={() => setIdx((prevValue) => (prevValue + 1) % arr.length)}
+          sx={boxStyle}
+          className="border"
+        >
+          <Piece
+            style={{
+              position: "absolute",
+              top: "-12%",
+              left: "-33%",
+            }}
+            pieceType="accessories"
+            pieceSize="80"
+            accessoriesType={arr[idx]}
+          />
+        </Box>
+      </Tooltip>
     </Container>
   );
 };

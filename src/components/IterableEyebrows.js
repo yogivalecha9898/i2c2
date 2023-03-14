@@ -10,6 +10,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -32,22 +33,24 @@ const IterableEyebrows = ({ target, setEyebrowsValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        onClick={() => setIdx((idx + 1) % arr.length)}
-        style={boxStyle}
-        className="border"
-      >
-        <Piece
-          style={{
-            position: "absolute",
-            top: "35%",
-            left: "-20%",
-          }}
-          pieceType="eyebrows"
-          pieceSize="300"
-          eyebrowType={arr[idx]}
-        />
-      </Box>
+      <Tooltip title={arr[idx]}>
+        <Box
+          onClick={() => setIdx((idx + 1) % arr.length)}
+          style={boxStyle}
+          className="border"
+        >
+          <Piece
+            style={{
+              position: "absolute",
+              top: "35%",
+              left: "-19%",
+            }}
+            pieceType="eyebrows"
+            pieceSize="150"
+            eyebrowType={arr[idx]}
+          />
+        </Box>
+      </Tooltip>
       {/* <FormControl sx={{ minWidth: "100px", margin: "20px 0" }}>
         <InputLabel id="demo-simple-select-label">Eyebrows</InputLabel>
         <Select label="EYEBROWS" onChange={(e) => setEyebrows(e.target.value)}>

@@ -9,6 +9,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Box } from "@mui/system";
@@ -32,22 +33,24 @@ const IterableEyes = ({ target, setMouthValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        sx={boxStyle}
-        className="border"
-        onClick={() => setIdx((idx + 1) % arr.length)}
-      >
-        <Piece
-          style={{
-            position: "absolute",
-            top: "-20%",
-            left: "-18.55%",
-          }}
-          pieceType="mouth"
-          pieceSize="300"
-          mouthType={arr[idx]}
-        />
-      </Box>
+      <Tooltip title={arr[idx]}>
+        <Box
+          sx={boxStyle}
+          className="border"
+          onClick={() => setIdx((idx + 1) % arr.length)}
+        >
+          <Piece
+            style={{
+              position: "absolute",
+              top: "-20%",
+              left: "-20%",
+            }}
+            pieceType="mouth"
+            pieceSize="150"
+            mouthType={arr[idx]}
+          />
+        </Box>
+      </Tooltip>
       {/* <FormControl sx={{ minWidth: "100px", margin: "20px 0" }}>
         <InputLabel id="demo-simple-select-label">Mouth</InputLabel>
         <Select label="MOUTH" onChange={(e) => setMouth(e.target.value)}>

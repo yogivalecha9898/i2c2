@@ -7,6 +7,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Tooltip,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Box } from "@mui/system";
@@ -31,18 +32,20 @@ const IterableEyes = ({ target, setSkinValue }) => {
         width: "200px",
       }}
     >
-      <Box
-        onClick={() => setIdx((idx + 1) % arr.length)}
-        sx={boxStyle}
-        className="border"
-      >
-        <Piece
-          pieceType="skin"
-          style={{ position: "absolute", left: "-5%" }}
-          pieceSize="150"
-          skinColor={arr[idx]}
-        />
-      </Box>
+      <Tooltip title={arr[idx]}>
+        <Box
+          onClick={() => setIdx((idx + 1) % arr.length)}
+          sx={boxStyle}
+          className="border"
+        >
+          <Piece
+            pieceType="skin"
+            style={{ position: "absolute", left: "-15%", top: "-10%" }}
+            pieceSize="150"
+            skinColor={arr[idx]}
+          />
+        </Box>
+      </Tooltip>
       {/* <FormControl sx={{ minWidth: "100px", margin: "20px 0" }}>
         <InputLabel id="demo-simple-select-label">Skin</InputLabel>
         <Select label="SKIN" onChange={(e) => setSkin(e.target.value)}>

@@ -9,7 +9,14 @@ import IterableEyes from "./components/IterableEyes";
 import IterableMouth from "./components/IterableMouth";
 import IterableClothes from "./components/IterableClothes";
 import IterableSkin from "./components/IterableSkin";
-import { Button } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 const App = () => {
   const [topValue, setTopValue] = useState();
@@ -68,7 +75,14 @@ const App = () => {
           alignItems: "center",
         }}
       >
-        AVATAR
+        <Container>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography sx={{ fontWeight: "bold", letterSpacing: "2px" }}>
+              TEZAVATAR
+            </Typography>
+            <Button variant="contained">Connect Wallet</Button>
+          </Box>
+        </Container>
         <hr
           style={{
             width: "500px",
@@ -77,7 +91,7 @@ const App = () => {
           }}
         />
         <Avatar
-          style={{ width: "200px", height: "200px" }}
+          style={{ width: "300px", height: "300px" }}
           avatarStyle="Circle"
           topType={topValue}
           accessoriesType={accValue}
@@ -91,7 +105,7 @@ const App = () => {
           skinColor={skinValue}
         />
       </Container>
-      <Container sx={{ display: "flex", flexWrap: "wrap" }}>
+      <Container sx={{ display: "flex" }}>
         <IterableTop
           target="Top"
           setTopValue={setTopValue}
@@ -115,8 +129,19 @@ const App = () => {
         />
         <IterableSkin target="Skin" setSkinValue={setSkinValue} />
       </Container>
-      <Container>
-        <Button onClick={handleData}>Click</Button>
+      <Container sx={{ textAlign: "center", marginBottom: "20px" }}>
+        <Button variant="contained" onClick={handleData}>
+          Export to csv
+        </Button>
+      </Container>
+      <Container sx={{ textAlign: "center" }}>
+        <FormControl size="small">
+          <TextField
+            id="outlined-basic"
+            label="Input a name for NFT"
+            variant="outlined"
+          />
+        </FormControl>
       </Container>
     </div>
   );

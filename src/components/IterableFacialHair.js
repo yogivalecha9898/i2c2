@@ -44,7 +44,7 @@ const IterableFacialHair = ({ target, setFacialHairValue }) => {
             style={{
               position: "absolute",
               top: "-50%",
-              left: "-52%",
+              left: "-55%",
             }}
             pieceType="facialHair"
             pieceSize="100"

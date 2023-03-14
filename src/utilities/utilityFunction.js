@@ -2,10 +2,12 @@ import {
   Accessories,
   Clothes,
   ClothesColor,
+  ClothesColorKeys,
   Eyebrows,
   Eyes,
   FacialHair,
   HairColor,
+  HairColorKeys,
   Mouth,
   Skin,
   Top,
@@ -42,6 +44,12 @@ const getUtility = (target) => {
 
     case "Skin":
       return Skin;
+
+    case "HairColorKeys":
+      return HairColorKeys;
+
+    case "ClothesColorKeys":
+      return ClothesColorKeys;
 
     default:
       return "Nothing";

@@ -18,15 +18,15 @@ import { useEffect, useState } from "react";
 const IterableEyes = ({ target, setClothesValue, setClothesColorValue }) => {
   const arr = getUtility(target);
   const clothesColorArr = getUtility("ClothesColor");
+  const keys = getUtility("ClothesColorKeys");
 
-  const [clothesValue, setClothes] = useState();
-  const [clothesColor, setClothesColor] = useState(clothesColorArr[0]);
   const [idx, setIdx] = useState(0);
+  const [idx1, setIdx1] = useState(0);
 
   useEffect(() => {
     setClothesValue(arr[idx]);
-    setClothesColorValue(clothesColor);
-  }, [idx, clothesColor]);
+    setClothesColorValue(keys[idx1]);
+  }, [idx, idx1]);
 
   return (
     <Container
@@ -52,25 +52,20 @@ const IterableEyes = ({ target, setClothesValue, setClothesColorValue }) => {
             pieceType="clothe"
             pieceSize="70"
             clotheType={arr[idx]}
-            clotheColor={clothesColor}
+            clotheColor={keys[idx1]}
           />
         </Box>
       </Tooltip>
-      <FormControl size="small">
-        <InputLabel id="demo-simple-select-label">Clothe Color</InputLabel>
-        <Select
-          label="Clothe Color"
-          onChange={(e) => setClothesColor(e.target.value)}
-        >
-          {clothesColorArr.map((options) => {
-            return (
-              <MenuItem value={options}>
-                <Typography className="text-center">{options}</Typography>
-              </MenuItem>
-            );
-          })}
-        </Select>
-      </FormControl>
+      <Box
+        onClick={() => setIdx1((idx1 + 1) % clothesColorArr.length)}
+        sx={{
+          width: "30px",
+          height: "30px",
+          backgroundColor: clothesColorArr[idx1],
+          borderRadius: "50%",
+          marginLeft: "10px",
+        }}
+      />
     </Container>
   );
 };

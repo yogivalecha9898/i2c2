@@ -34,3 +34,21 @@
 .pointer {
   cursor: pointer;
 }
+
+.heartEmojiFloat {
+  position: relative;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  from {
+    top: 10%;
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    top: -10%;
+    opacity: 0;
+    transform: scale(14.5);
+  }
+}

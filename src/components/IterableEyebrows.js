@@ -43,7 +43,7 @@ const IterableEyebrows = ({ target, setEyebrowsValue }) => {
             style={{
               position: "absolute",
               top: "35%",
-              left: "-19%",
+              left: "-20%",
             }}
             pieceType="eyebrows"
             pieceSize="150"

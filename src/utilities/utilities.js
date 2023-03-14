@@ -1,7 +1,7 @@
 export const Top = [
+  "Hat",
   "NoHair",
   "Eyepatch",
-  "Hat",
   "Hijab",
   "Turban",
   "WinterHat1",
@@ -38,6 +38,20 @@ export const Top = [
 ];
 
 export const HairColor = [
+  "#A55728",
+  "#2C1B18",
+  "#B58143",
+  "#D6B370",
+  "#724133",
+  "#4A312C",
+  "#F59797",
+  "#000fdb",
+  "#ECDCBF",
+  "#C93305",
+  "#E8E1E1",
+];
+
+export const HairColorKeys = [
   "Auburn",
   "Black",
   "Blonde",
@@ -52,9 +66,9 @@ export const HairColor = [
 ];
 
 export const Accessories = [
+  "Prescription01",
   "Blank",
   "Kurt",
-  "Prescription01",
   "Prescription02",
   "Round",
   "Sunglasses",
@@ -62,19 +76,19 @@ export const Accessories = [
 ];
 
 export const FacialHair = [
+  "BeardLight",
   "Blank",
   "BeardMedium",
-  "BeardLight",
   "BeardMajestic",
   "MoustacheFancy",
   "MoustacheMagnum",
 ];
 
 export const Eyebrows = [
+  "DefaultNatural",
   "Angry",
   "AngryNatural",
   "Default",
-  "DefaultNatural",
   "FlatNatural",
   "RaisedExcited",
   "RaisedExcitedNatural",
@@ -86,12 +100,12 @@ export const Eyebrows = [
 ];
 
 export const Eyes = [
+  "Happy",
   "Close",
   "Cry",
   "Default",
   "Dizzy",
   "EyeRoll",
-  "Happy",
   "Hearts",
   "Side",
   "Squint",
@@ -101,6 +115,7 @@ export const Eyes = [
 ];
 
 export const Mouth = [
+  "Smile",
   "Concerned",
   "Default",
   "Disbelief",
@@ -109,7 +124,6 @@ export const Mouth = [
   "Sad",
   "ScreamOpen",
   "Serious",
-  "Smile",
   "Tongue",
   "Twinkle",
   "Vomit",
@@ -127,7 +141,7 @@ export const Clothes = [
   "ShirtVNeck",
 ];
 
-export const ClothesColor = [
+export const ClothesColorKeys = [
   "Black",
   "Blue01",
   "Blue02",
@@ -145,11 +159,29 @@ export const ClothesColor = [
   "White",
 ];
 
+export const ClothesColor = [
+  "#262E33",
+  "#65C9FF",
+  "#5199E4",
+  "#25557C",
+  "#E6E6E6",
+  "#929598",
+  "#3C4F5C",
+  "#B1E2FF",
+  "#A7FFC4",
+  "#FFDEB5",
+  "#FFAFB9",
+  "#FFFFB1",
+  "#FF488E",
+  "#FF5C5C",
+  "#FFFFFF",
+];
+
 export const Skin = [
+  "Light",
   "Tanned",
   "Yellow",
   "Pale",
-  "Light",
   "Brown",
   "DarkBrown",
   "Black",

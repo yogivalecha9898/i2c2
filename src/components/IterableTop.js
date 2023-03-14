@@ -4,7 +4,6 @@ import getUtility from "../utilities/utilityFunction";
 import "../styles/commonStyles.css";
 import { Piece } from "avataaars";
 import {
-  Avatar,
   Container,
   FormControl,
   InputLabel,
@@ -18,15 +17,15 @@ import { useEffect, useState } from "react";
 const IterableTop = ({ target, setTopValue, setHairColorValue }) => {
   const arr = getUtility(target);
   const hairColorArr = getUtility("HairColor");
+  const keys = getUtility("HairColorKeys");
 
-  const [topValue, setTop] = useState();
-  const [hairColor, setHairColor] = useState(hairColorArr[0]);
   const [idx, setIdx] = useState(0);
+  const [idx1, setIdx1] = useState(0);
 
   useEffect(() => {
     setTopValue(arr[idx]);
-    setHairColorValue(hairColor);
-  }, [idx, hairColor]);
+    setHairColorValue(keys[idx1]);
+  }, [idx, idx1]);
 
   return (
     <Container
@@ -46,29 +45,25 @@ const IterableTop = ({ target, setTopValue, setHairColorValue }) => {
           <Piece
             style={{
               position: "absolute",
+              left: "-2%",
             }}
             pieceType="top"
             pieceSize="50"
             topType={arr[idx]}
-            hairColor={hairColor}
+            hairColor={keys[idx1]}
           />
         </Box>
       </Tooltip>
-      <FormControl size="small">
-        <InputLabel id="demo-simple-select-label">Hair Color</InputLabel>
-        <Select
-          label="Hair Color"
-          onChange={(e) => setHairColor(e.target.value)}
-        >
-          {hairColorArr.map((options) => {
-            return (
-              <MenuItem value={options}>
-                <Typography className="text-center">{options}</Typography>
-              </MenuItem>
-            );
-          })}
-        </Select>
-      </FormControl>
+      <Box
+        onClick={() => setIdx1((idx1 + 1) % hairColorArr.length)}
+        sx={{
+          width: "30px",
+          height: "30px",
+          backgroundColor: hairColorArr[idx1],
+          borderRadius: "50%",
+          marginLeft: "10px",
+        }}
+      />
     </Container>
   );
 };

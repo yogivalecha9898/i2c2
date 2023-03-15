@@ -100,9 +100,18 @@ const App = () => {
                 fontSize: "30px",
               }}
             >
-              TEZAVATAR
+              TEZVATAR
             </Typography>
-            <Button variant="contained">Connect Wallet</Button>
+            <Button
+              style={{
+                borderRadius: "50px",
+                color: "#4169e1",
+                fontWeight: "bolder",
+                backgroundColor: "#002147",
+              }}
+            >
+              Connect Wallet
+            </Button>
           </Box>
           <Avatar
             style={{ width: "300px", height: "300px" }}
@@ -119,7 +128,15 @@ const App = () => {
             skinColor={skinValue}
           />
         </Box>
-        <Container sx={{ display: "flex" }}>
+        <Container
+          sx={{
+            display: "flex",
+            borderRadius: "20px",
+            backgroundColor: "#262729",
+            margin: "0 auto 20px",
+            width: "850px",
+          }}
+        >
           <IterableTop
             target="Top"
             setTopValue={setTopValue}
@@ -143,19 +160,47 @@ const App = () => {
           />
           <IterableSkin target="Skin" setSkinValue={setSkinValue} />
         </Container>
-        <Container sx={{ textAlign: "center", marginBottom: "20px" }}>
-          <Button variant="contained" onClick={handleData}>
+        <Container
+          sx={{
+            marginBottom: "20px",
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          <Button
+            variant="contained"
+            sx={{
+              background:
+                "linear-gradient(93.06deg, rgb(255, 0, 199) 2.66%, rgb(255, 159, 251) 98.99%)",
+              borderRadius: "50px",
+              color: "white",
+              fontWeight: "bolder",
+            }}
+            onClick={handleData}
+          >
             Export to csv
           </Button>
-        </Container>
-        <Container sx={{ textAlign: "center" }}>
           <FormControl size="small">
             <TextField
+              size="small"
               id="outlined-basic"
               label="Input a name for NFT"
               variant="outlined"
             />
           </FormControl>
+          <Button
+            variant="contained"
+            sx={{
+              background:
+                "linear-gradient(93.06deg, rgb(255, 0, 199) 2.66%, rgb(255, 159, 251) 98.99%)",
+              borderRadius: "50px",
+              color: "white",
+              fontWeight: "bolder",
+              width: "150px",
+            }}
+          >
+            Mint
+          </Button>
         </Container>
         <Container
           sx={{
@@ -167,7 +212,7 @@ const App = () => {
         >
           Made with
           <span style={{ margin: "0 5px" }}>
-            <span className="heartEmojiFloat">&#128151;</span>
+            <span className="heartEmojiFloat">💜</span>
           </span>
           by NKNLABS
         </Container>

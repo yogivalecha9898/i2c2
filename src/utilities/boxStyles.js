@@ -4,7 +4,7 @@ export const boxStyle = {
   position: "relative",
   overflow: "hidden",
   borderRadius: "50%",
-  backgroundColor: "lightgray",
+  backgroundColor: "#575a61",
 };
 
 export const modalBoxstyle = {

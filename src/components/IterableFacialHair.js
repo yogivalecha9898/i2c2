@@ -3,27 +3,25 @@ import { boxStyle, modalBoxstyle } from "../utilities/boxStyles";
 import getUtility from "../utilities/utilityFunction";
 import "../styles/commonStyles.css";
 import { Piece } from "avataaars";
-import {
-  Avatar,
-  Container,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Container, Tooltip } from "@mui/material";
 import { useEffect, useState } from "react";
 
-const IterableFacialHair = ({ target, setFacialHairValue }) => {
+const IterableFacialHair = ({
+  target,
+  setFacialHairValue,
+  setFacialHairColorValue,
+}) => {
   const arr = getUtility(target);
+  const facialHairColorArr = getUtility("FacialHairColor");
+  const keys = getUtility("FacialHairColorKeys");
 
-  const [facialValue, setFacialHair] = useState();
   const [idx, setIdx] = useState(0);
+  const [idx1, setIdx1] = useState(0);
 
   useEffect(() => {
     setFacialHairValue(arr[idx]);
-  }, [idx]);
+    setFacialHairColorValue(keys[idx1]);
+  }, [idx, idx1]);
 
   return (
     <Container
@@ -36,7 +34,7 @@ const IterableFacialHair = ({ target, setFacialHairValue }) => {
     >
       <Tooltip title={arr[idx]}>
         <Box
-          sx={boxStyle}
+          sx={{ ...boxStyle, marginBottom: "20px" }}
           onClick={() => setIdx((idx + 1) % arr.length)}
           className="border"
         >
@@ -49,27 +47,20 @@ const IterableFacialHair = ({ target, setFacialHairValue }) => {
             pieceType="facialHair"
             pieceSize="100"
             facialHairType={arr[idx]}
+            facialHairColor={keys[idx1]}
           />
         </Box>
       </Tooltip>
-      {/* <FormControl sx={{ minWidth: "100px", margin: "20px 0" }}>
-        <InputLabel id="demo-simple-select-label">Facial Hair</InputLabel>
-        <Select
-          label="FACIAL HAIR"
-          onChange={(e) => setFacialHair(e.target.value)}
-        >
-          {arr.map((options) => {
-            return (
-              <MenuItem
-                value={options}
-                className="flex-column flex-center flex"
-              >
-                <Typography className="text-center">{options}</Typography>
-              </MenuItem>
-            );
-          })}
-        </Select>
-      </FormControl> */}
+      <Box
+        onClick={() => setIdx1((idx1 + 1) % facialHairColorArr.length)}
+        sx={{
+          width: "30px",
+          height: "30px",
+          backgroundColor: facialHairColorArr[idx1],
+          borderRadius: "50%",
+          marginLeft: "8px",
+        }}
+      />
     </Container>
   );
 };

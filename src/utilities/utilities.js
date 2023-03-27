@@ -186,3 +186,27 @@ export const Skin = [
   "DarkBrown",
   "Black",
 ];
+
+export const FacialHairColorKeys = [
+  "Auburn",
+  "Black",
+  "Blonde",
+  "BlondeGolden",
+  "Brown",
+  "BrownDark",
+  "Platinum",
+  "Red",
+  "SilverGray",
+];
+
+export const FacialHairColor = [
+  "#A55728",
+  "#2C1B18",
+  "#B58143",
+  "#D6B370",
+  "#724133",
+  "#4A312C",
+  "#ECDCBF",
+  "#C93305",
+  "#E8E1E1",
+];

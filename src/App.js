@@ -37,6 +37,7 @@ const App = () => {
   const [clothesValue, setClothesValue] = useState();
   const [clothesColorValue, setClothesColorValue] = useState();
   const [skinValue, setSkinValue] = useState();
+  const [facialHairColorValue, setFacialHairColorValue] = useState();
 
   const handleData = () => {
     const jsonobj = {
@@ -84,6 +85,7 @@ const App = () => {
             flexDirection: "column",
             alignItems: "center",
             padding: "5px",
+            width: "95%",
           }}
         >
           <Box
@@ -100,7 +102,17 @@ const App = () => {
                 fontSize: "30px",
               }}
             >
-              TEZVATAR
+              TEZVATAR{" "}
+              <span
+                style={{
+                  fontSize: "16px",
+                  letterSpacing: 0,
+                  cursor: "pointer",
+                  color: "darkgray",
+                }}
+              >
+                {" "}
+              </span>
             </Typography>
             <Button
               style={{
@@ -120,6 +132,7 @@ const App = () => {
             accessoriesType={accValue}
             hairColor={hairColorValue}
             facialHairType={facialHairValue}
+            facialHairColor={facialHairColorValue}
             clotheType={clothesValue}
             clotheColor={clothesColorValue}
             eyeType={eyesValue}
@@ -146,6 +159,7 @@ const App = () => {
           <IterableFacialHair
             target="FacialHair"
             setFacialHairValue={setFacialHairValue}
+            setFacialHairColorValue={setFacialHairColorValue}
           />
           <IterableEyebrows
             target="Eyebrows"
@@ -165,6 +179,7 @@ const App = () => {
             marginBottom: "20px",
             display: "flex",
             justifyContent: "space-around",
+            width: "70%",
           }}
         >
           <Button
@@ -184,7 +199,7 @@ const App = () => {
             <TextField
               size="small"
               id="outlined-basic"
-              label="Input a name for NFT"
+              label="Input TEZVATAR name"
               variant="outlined"
             />
           </FormControl>
@@ -207,11 +222,15 @@ const App = () => {
             padding: "10px 0",
             textAlign: "center",
             height: "50px",
-            margin: "20px auto",
+            margin: "60px auto 0",
           }}
         >
           Made with
-          <span style={{ margin: "0 5px" }}>
+          <span
+            style={{
+              margin: "0 5px",
+            }}
+          >
             <span className="heartEmojiFloat">💜</span>
           </span>
           by NKNLABS

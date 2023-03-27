@@ -6,6 +6,8 @@ import {
   Eyebrows,
   Eyes,
   FacialHair,
+  FacialHairColor,
+  FacialHairColorKeys,
   HairColor,
   HairColorKeys,
   Mouth,
@@ -50,6 +52,12 @@ const getUtility = (target) => {
 
     case "ClothesColorKeys":
       return ClothesColorKeys;
+
+    case "FacialHairColor":
+      return FacialHairColor;
+
+    case "FacialHairColorKeys":
+      return FacialHairColorKeys;
 
     default:
       return "Nothing";
